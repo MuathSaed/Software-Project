@@ -1,17 +1,17 @@
 Feature: add appointment 
 
-Scenario Outline: Successfully added an appointment 
+Scenario Outline: the Patient has successfully added an appointment 
 	Given the Patient is logged in 
 	When the Patient select add appointment option 
 	And the Patient chooses date of the appointment in <DD>/<MM>/<YYYY> format 
 	And the Patient chooses time of the appointment 
-	Then appointment will be added and booked 
+	Then appointment will be added and recorded 
 	And "Appointment added successfully." message will appear 
 	Examples: 
 		|DD  |MM  |YYYY  |Time|
 		|20  |10  |2022  |"9-10"|
 		
-Scenario Outline: Failed to add appointment 
+Scenario Outline: the Patient failed to add appointment 
 	Given the Patient is logged in 
 	When the Patient select add appointment option 
 	And the Patient chooses date of the appointment in <DD>/<MM>/<YYYY> format 
