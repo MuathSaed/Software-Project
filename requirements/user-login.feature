@@ -37,4 +37,4 @@ Scenario Outline: <role> failed to login due to wrong password
 		|"Muath"    |"muathpass@"   |"Secretary"|
 		|"Abod"     |"abodpass@"  	|"Doctor"|
 		|"Ahmad"    |"ahmadpass@"  	|"Patient"|
-		
+	

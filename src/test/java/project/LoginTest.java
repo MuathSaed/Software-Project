@@ -12,10 +12,10 @@ public class LoginTest {
 
 	public LoginTest() {
 		users = new ArrayList<User>();
-		users.add(new User("Haya", "hayapass", "Admin"));
-		users.add(new User("Muath", "muathpass", "Secretary"));
-		users.add(new User("Abod", "abodpass", "Doctor"));
-		users.add(new User("Ahmad", "ahmadpass", "Patient"));
+		users.add(new Admin("Haya", "hayapass", "Admin"));
+		users.add(new Secretary("Muath", "muathpass", "Secretary"));
+		users.add(new Doctor("Abod", "abodpass", "Doctor"));
+		users.add(new Patient("Ahmad", "ahmadpass", "Patient"));
 	}
 
 	@Given("That the {string} on the homepage")
@@ -72,4 +72,5 @@ public class LoginTest {
 	public void message_will_appear(String string) {
 		System.out.println(string);
 	}
+
 }
