@@ -77,16 +77,12 @@ public class AppointmentTest {
 	@Then("appointment will be edited and recorded")
 	public void appointmentWillBeEditedAndRecorded() {
 		appointment = new Appointment(date, time);
-		System.out.println("selected: " + selected.date + "    time: " + selected.time);
-		System.out.println("new: " + appointment.date + "    time: " + appointment.time);
 		assertEquals(record.editAppointment(selected, appointment, patient), true);
 	}
 
 	@Then("appointment will not be changed")
 	public void appointmentWillNotBeChanged() {
 		appointment = new Appointment(date, time);
-		System.out.println("selected: " + selected.date + "    time: " + selected.time);
-		System.out.println("new: " + appointment.date + "    time: " + appointment.time);
 		assertEquals(record.editAppointment(selected, appointment, patient), false);
 	}
 
