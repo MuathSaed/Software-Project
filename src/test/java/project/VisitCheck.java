@@ -3,14 +3,14 @@ package project;
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 
-public class VisitTest {
+public class VisitCheck {
 	Doctor doctor;
 	Secretary secretary;
 	Patient patient, patient2;
 	Clinic record = new Clinic();
 	int i = -1;
 
-	public VisitTest() {
+	public VisitCheck() {
 		doctor = new Doctor("Abod", "abodpass", "Doctor");
 		doctor.login("Abod", "abodpass");
 		secretary = new Secretary("Muath", "muathpass", "Secretary");

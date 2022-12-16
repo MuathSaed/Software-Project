@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
-public class ReportTest {
+public class ReportCheck {
 
 	@Given("The Doctor is logged in")
 	public void theDoctorIsLoggedIn() {

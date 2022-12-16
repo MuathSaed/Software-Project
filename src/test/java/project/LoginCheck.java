@@ -4,13 +4,13 @@ import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
-public class LoginTest {
+public class LoginCheck {
 	String name;
 	String pass;
 	String role;
 	ArrayList<User> users;
 
-	public LoginTest() {
+	public LoginCheck() {
 		users = new ArrayList<User>();
 		users.add(new Admin("Haya", "hayapass", "Admin"));
 		users.add(new Secretary("Muath", "muathpass", "Secretary"));

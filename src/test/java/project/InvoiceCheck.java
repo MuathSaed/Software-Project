@@ -4,7 +4,7 @@ import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 
-public class InvoiceTest {
+public class InvoiceCheck {
 
 	@When("the Secretary select Issue Invoice option")
 	public void theSecretarySelectIssueInvoiceOption() {

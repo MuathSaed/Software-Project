@@ -3,7 +3,7 @@ package project;
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
 
-public class AppointmentTest {
+public class AppointmentCheck {
 
 	String date, time;
 	Patient patient;
@@ -11,7 +11,7 @@ public class AppointmentTest {
 	Clinic record = new Clinic();
 	int i;
 
-	public AppointmentTest() {
+	public AppointmentCheck() {
 		patient = new Patient("Ahmad", "ahmadpass", "Patient");
 		patient.login("Ahmad", "ahmadpass");
 		record.addAppointment(new Appointment("27/06/2022", "11"), patient);

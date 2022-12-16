@@ -5,14 +5,14 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 
-public class LogoutTest {
+public class LogoutCheck {
 
 	String name;
 	String pass;
 	String role;
 	ArrayList<User> users;
 
-	public LogoutTest() {
+	public LogoutCheck() {
 		users = new ArrayList<User>();
 		users.add(new Admin("Haya", "hayapass", "Admin"));
 		users.add(new Secretary("Muath", "muathpass", "Secretary"));
