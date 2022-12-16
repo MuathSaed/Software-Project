@@ -21,7 +21,7 @@ public class VisitTest {
 
 	@Given("the Secretary is logged in")
 	public void theSecretaryIsLoggedIn() {
-		assertEquals(secretary.loginStatus, true);
+		assertEquals(true, secretary.loginStatus);
 	}
 
 	@When("a Patient arrived to clinic")
@@ -31,41 +31,41 @@ public class VisitTest {
 	@When("the Patient has an appointment")
 	public void thePatientHasAnAppointment() {
 		i = record.getIndex(patient);
-		assertEquals((i != -1), true);
+		assertEquals(true, (i != -1));
 	}
 
 	@Then("the Secretary will record a visit")
 	public void theSecretaryWillRecordAVisit() {
 		if (i > -1)
-			assertEquals(record.addVisit(record.appointmentsRecord.get(i)), true);
+			assertEquals(true, record.addVisit(record.appointmentsRecord.get(i)));
 		else {
 			record.addAppointment(new Appointment("22/07/2022", "11"), patient2);
 			i = record.appointmentsRecord.size() - 1;
-			assertEquals(record.addVisit(record.appointmentsRecord.get(i)), true);
+			assertEquals(true, record.addVisit(record.appointmentsRecord.get(i)));
 		}
 	}
 
 	@When("the Patient does not have an appointment")
 	public void thePatientDoesNotHaveAnAppointment() {
 		i = record.getIndex(patient2);
-		assertEquals((i != -1), false);
+		assertEquals(false, (i != -1));
 	}
 
 	@When("the Doctor is available")
 	public void theDoctorIsAvailable() {
 		doctor.isAvailable = true;
-		assertEquals(doctor.isAvailable, true);
+		assertEquals(true, doctor.isAvailable);
 	}
 
 	@When("the Doctor is busy")
 	public void theDoctorIsBusy() {
-		assertEquals(doctor.isAvailable, false);
+		assertEquals(false, doctor.isAvailable);
 	}
 
 	@Then("the Secretary will record and add an appointment for the Patient in another time")
 	public void theSecretaryWillRecordAndAddAnAppointmentForThePatientInAnotherTime() {
 		if (doctor.isAvailable)
-			assertEquals(record.addAppointment(new Appointment("22/07/2022", "11"), patient2), true);
+			assertEquals(true, record.addAppointment(new Appointment("22/07/2022", "11"), patient2));
 	}
 
 }

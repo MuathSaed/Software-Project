@@ -45,7 +45,7 @@ public class LoginTest {
 		else if (string.equals("Patient"))
 			index = 3;
 
-		assertEquals(users.get(index).login(name, pass), true);
+		assertEquals(true, users.get(index).login(name, pass));
 	}
 
 	@Then("proceed to {string} activities menu")
@@ -65,7 +65,7 @@ public class LoginTest {
 		else if (string.equals("Secretary"))
 			index = 3;
 
-		assertEquals(users.get(index).login(name, pass), false);
+		assertEquals(false, users.get(index).login(name, pass));
 	}
 
 	@Then("{string} message will appear")

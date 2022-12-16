@@ -37,7 +37,7 @@ public class LogoutTest {
 		else if (string.equals("Patient"))
 			index = 3;
 
-		assertEquals(users.get(index).loginStatus, true);
+		assertEquals(true, users.get(index).loginStatus);
 	}
 
 	@When("the {string} logs out")
@@ -53,7 +53,7 @@ public class LogoutTest {
 			index = 3;
 
 		users.get(index).logout();
-		assertEquals(users.get(index).loginStatus, false);
+		assertEquals(false, users.get(index).loginStatus);
 	}
 
 }

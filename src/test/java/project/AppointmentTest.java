@@ -20,7 +20,7 @@ public class AppointmentTest {
 
 	@Given("the Patient is logged in")
 	public void thePatientIsLoggedIn() {
-		assertEquals(patient.loginStatus, true);
+		assertEquals(true, patient.loginStatus);
 	}
 
 	@When("the Patient select add appointment option")
@@ -40,18 +40,18 @@ public class AppointmentTest {
 	@Then("appointment will be added and recorded")
 	public void appointmentWillBeAddedAndRecorded() {
 		appointment = new Appointment(date, time);
-		assertEquals(record.addAppointment(appointment, patient), true);
+		assertEquals(true, record.addAppointment(appointment, patient));
 	}
 
 	@When("selected date and time are reserved by another Patient")
 	public void selectedDateAndTimeAreReservedByAnotherPatient() {
 		appointment = new Appointment(date, time);
-		assertEquals(record.isAvailable(appointment), false);
+		assertEquals(false, record.isAvailable(appointment));
 	}
 
 	@Then("appointment will not be added")
 	public void appointmentWillNotBeAdded() {
-		assertEquals(record.addAppointment(appointment, patient), false);
+		assertEquals(false, record.addAppointment(appointment, patient));
 	}
 
 	@When("the Patient select change appointment option")
@@ -77,13 +77,13 @@ public class AppointmentTest {
 	@Then("appointment will be edited and recorded")
 	public void appointmentWillBeEditedAndRecorded() {
 		appointment = new Appointment(date, time);
-		assertEquals(record.editAppointment(selected, appointment, patient), true);
+		assertEquals(true, record.editAppointment(selected, appointment));
 	}
 
 	@Then("appointment will not be changed")
 	public void appointmentWillNotBeChanged() {
 		appointment = new Appointment(date, time);
-		assertEquals(record.editAppointment(selected, appointment, patient), false);
+		assertEquals(false, record.editAppointment(selected, appointment));
 	}
 
 	@When("the Patient select delete appointment option")
@@ -98,7 +98,7 @@ public class AppointmentTest {
 
 	@Then("appointment will be deleted")
 	public void appointmentWillBeDeleted() {
-		assertEquals(record.deleteAppointment(selected), true);
+		assertEquals(true, record.deleteAppointment(selected));
 	}
 
 }

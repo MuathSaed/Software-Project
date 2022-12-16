@@ -1,17 +1,14 @@
 package project;
 
 import java.util.ArrayList;
-
-import io.cucumber.java.lu.a;
+import java.util.logging.*;
 
 public class Clinic {
-	protected ArrayList<Appointment> appointmentsRecord = new ArrayList<Appointment>();
-	protected ArrayList<Patient> patientsList = new ArrayList<Patient>();
-	protected ArrayList<Integer> reservationType = new ArrayList<Integer>();
+	protected ArrayList<Appointment> appointmentsRecord = new ArrayList<>();
+	protected ArrayList<Patient> patientsList = new ArrayList<>();
+	protected ArrayList<Integer> reservationType = new ArrayList<>();
+	Logger logger = Logger.getLogger(Clinic.class.getName());
 
-	public Clinic() {
-
-	}
 
 	public boolean addAppointment(Appointment appointment, Patient patient) {
 		if (isAvailable(appointment)) {
@@ -80,7 +77,7 @@ public class Clinic {
 
 	}
 
-	public boolean editAppointment(Appointment old, Appointment appointment, Patient patient) {
+	public boolean editAppointment(Appointment old, Appointment appointment) {
 
 		if (isAvailable(appointment)) {
 			int index = getIndex(old);
@@ -96,7 +93,7 @@ public class Clinic {
 	public void printForPatient(Patient patient) {
 		for (int i = 0; i <= patientsList.size(); i++) {
 			if (patientsList.get(i).equals(patient) && reservationType.get(i).equals(1)) {
-				System.out.println((i + 1) + ".   Date: " + appointmentsRecord.get(i).date + "   Time: "
+				logger.log(Level.INFO, (i + 1) + ".   Date: " + appointmentsRecord.get(i).date + "   Time: "
 						+ appointmentsRecord.get(i).time);
 			}
 		}
