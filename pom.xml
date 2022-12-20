@@ -36,7 +36,6 @@
 	<profiles>
 		<profile>
 			<id>coverage</id>
-			
 			<build>
 				<plugins>
 					<plugin>
