@@ -60,6 +60,7 @@ public class AppointmentCheck {
 
 	@When("the Patient selects the appointment he wants to change {string}")
 	public void thePatientSelectsTheAppointmentHeWantsToChange(String string) {
+		record.printForPatient(patient);
 		i = Integer.parseInt(string) - 1;
 		selected = record.appointmentsRecord.get(i);
 	}
