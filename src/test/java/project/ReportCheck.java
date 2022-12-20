@@ -2,48 +2,55 @@ package project;
 
 import io.cucumber.java.en.*;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.ArrayList;
 
 public class ReportCheck {
 
-	@Given("The Doctor is logged in")
-	public void theDoctorIsLoggedIn() {
+
+	Secretary secretary;
+	Clinic clinic = new Clinic();
+	Report report = new Report();
+	String date;
+	
+	ArrayList<Services> services = new ArrayList<Services>();
+	
+	public ReportCheck() {
+		services.add(new Services("Colgate Electric Toothbrush ", 50, 35.00));
+		services.add(new Services("Panadol Painkiller", 20, 20.00));
+		services.add(new Services("Colgate Toothpaste", 0, 15.00));
+		
+		secretary = new Secretary("Muath", "muathpass", "Secretary");
+		secretary.login("Muath", "muathpass");
+
+	}
+	
+	@When("the secretary is logged in")
+	public void theSecretaryIsLoggedIn() {
+		assertEquals(true, secretary.loginStatus);
+	}
+
+	@When("and he\\/she want to check the number of available services")
+	public void and_he_she_want_to_check_the_number_of_available_services() {
 
 	}
 
-	@When("the Patient has finished his medical examination")
-	public void thePatientHasFinishedHisMedicalExamination() {
+	@When("he\\/she choose services list")
+	public void he_she_choose_services_list() {
 
 	}
-
-	@Then("the Doctor enters the results of the medical examination into the system")
-	public void theDoctorEntersTheResultsOfTheMedicalExaminationIntoTheSystem() {
-
+	
+	@When("click on button {string}")
+	public void clickOnButton(String string) {
+	    
+	}
+	
+	@Then("a report of available services will be generated")
+	public void a_report_of_available_services_will_be_generated() {
+	    assertTrue(report.availableServicesReport(services));
 	}
 
-	@Then("the Doctor select Generete Report option")
-	public void theDoctorSelectGenereteReportOption() {
 
-	}
-
-	@Then("a report will be generated")
-	public void aReportWillBeGenerated() {
-
-	}
-
-	@When("the Secretary want to generate a report on available services")
-	public void theSecretaryWantToGenerateAReportOnAvailableServices() {
-
-	}
-
-	@When("the Secretary select Display Services option")
-	public void theSecretarySelectDisplayServicesOption() {
-
-	}
-
-	@When("the Secretary select Generete Report option")
-	public void theSecretarySelectGenereteReportOption() {
-
-	}
 
 }
