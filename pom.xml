@@ -36,9 +36,9 @@
 	<profiles>
 		<profile>
 			<id>coverage</id>
-			<activation>
+			<!--activation>
 				<activeByDefault>true</activeByDefault>
-			</activation>
+			</activation-->
 			<build>
 				<plugins>
 					<plugin>
