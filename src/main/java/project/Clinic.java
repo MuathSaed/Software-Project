@@ -90,13 +90,4 @@ public class Clinic {
 		return false;
 	}
 
-	public void printForPatient(Patient patient) {
-		for (int i = 0; i <= patientsList.size(); i++) {
-			if (patientsList.get(i).equals(patient) && reservationType.get(i).equals(1)) {
-				String str = (i + 1) + ".   Date: " + appointmentsRecord.get(i).date + "   Time: "	+ appointmentsRecord.get(i).time;
-				logger.log(Level.INFO, str);
-			}
-		}
-	}
-
 }
